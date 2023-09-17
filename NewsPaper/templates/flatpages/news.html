@@ -1,0 +1,20 @@
+{% extends 'flatpages/default.html'%}
+{% block title %}
+    NEWS
+{% endblock title %}
+
+{% block content %}
+    <h1>ALL NEWS:</h1>
+    <table>
+        <tr>
+            <td>Date</td>
+            <td>Title</td>
+        </tr>
+        {% for el in news %}
+        <tr>
+            <td>{{el.date|date:'M d Y'}}</td>
+            <td>{{el.title|truncatechars:20 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
